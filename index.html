@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos do JavaScript</title>
+  <style>
+    body {
+      background-color: #f3f4f6;
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    body.modoEscuro {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    #tamanho {
+      white-space: pre-line;
+    }
+
+    button {
+      padding: 6px 12px;
+      margin: 4px 4px 4px 0;
+      cursor: pointer;
+    }
+
+    #input-texto {
+      padding: 6px;
+      margin-bottom: 8px;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .negrito {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Recursos do JavaScript</h1>
+
+  <section>
+    <h2 class="tituloSection">Eventos HTML</h2>
+    <button id="funcClick">Clique aqui (onclick)</button>
+    <p id="mouseOverOut">Passe o mouse aqui.</p>
+    <button onclick="mensagemPrompt()">Aperte aqui para escrever uma mensagem!</button>
+    <p id="eco"></p>
+    <p id="mensagem"></p>
+  </section>
+
+  <section>
+    <h2 id="title1" class="tituloSection">Manipulação de DOM</h2>
+    <input type="text" id="input-texto" placeholder="digite o texto do novo elemento"><br>
+    <button id="createElement">createElement()</button> <!-- Faz uso de appendChild -->
+    <button id="createTextnode">createTextNode()</button> <!-- Faz uso de appendChild -->
+    <button id="append">append()</button><br>
+    <button id="prepend">prepend()</button>
+    <button id="remove">remove()</button>
+    <button id="replaceWith">replaceWith()</button>
+    <h3>Lista de Elementos:</h3>
+    <ul id="minha-lista">
+      <li>Item Original</li>
+    </ul>
+    <button onclick="trocarTitulo()">Trocar título da página</button>
+    <button onclick="formatarTitulos()">Trocar títulos dos cards</button>
+    <p>A seguinte classe está sendo utilizada nos titulos:</p>
+    <p id="classTitleSection"></p>
+    <button onclick="classListRm()">Remover formatação</button>
+  </section>
+
+  <section>
+    <h2 class="tituloSection">Manipulação de Janela</h2>
+    <p id="tamanho"></p>
+    <button onclick="abrirJanela()">Abrir nova janela</button>
+    <button onclick="fecharJanela()">Fechar nova janela</button>
+    <button onclick="confirmarSaida()">Confirmar</button>
+    <button onclick="voltarAoTopo()">Rolar para o topo</button>
+    <button onclick="rolarParaBaixo()">Rolar um pouco para baixo</button>
+    <button onclick="classListToggle()">Alternar Tema</button>
+    <button onclick="voltar()">Voltar página</button>
+    <button onclick="avancar()">Avançar página</button>
+    <button onclick="href()">Mudar página</button>
+    <button onclick="reload()">Recarregar Página</button>
+    <p id="tempo">Aguardando...</p>
+    <button onclick="IniciarTimeout()">Executar timeout.</button>
+    <button id="CancelarTimeout" onclick="cancelarTimeout()">Cancelar Timeout</button>
+    <p id="intervalo">Contador: 0</p>
+    <button id="IniciarIntervalo" onclick="iniciarIntervalo()">Iniciar Contador</button>
+    <button id="PararIntervalo" onclick="pararIntervalo()">Parar Contador</button>
+  </section>
+  <script src="script.js"></script>
+</body>
+
+</html>

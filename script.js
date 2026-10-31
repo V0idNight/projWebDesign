@@ -33,20 +33,6 @@ for (let i = 0; i < section.length; i++) {
 
 let contador = 0;
 
-function adicionarItem() {
-  contador++;
-  const item = document.createElement("li");
-  item.textContent = "Item " + contador;
-  document.getElementById("lista").appendChild(item);
-}
-
-function removerItem() {
-  const lista = document.getElementById("lista");
-  if (lista.lastElementChild) {
-    lista.removeChild(lista.lastElementChild);
-  }
-}
-
 function trocarTitulo() {
   document.querySelector("h1").innerText = "Recursos do Javacript (Alterado)";
   document.title = "Recursos do Javacript (Alterado)";
@@ -129,26 +115,21 @@ buttonDBClick.addEventListener("dblclick", function () {
 
 });
 
-//nao sei o que tem antes
-// manipulaçao
 const inputTexto = document.getElementById('input-texto');
 const list = document.getElementById('minha-lista');
 
-const btnCreateElement = document.getElementById('btn-create-element');
-const btnCreateTextNode = document.getElementById('btn-create-textnode');
-const btnAppend = document.getElementById('btn-append');
-const btnPrepend = document.getElementById('btn-prepend');
-const btnRemove = document.getElementById('btn-remove');
-const btnReplace = document.getElementById('btn-replace');
-
-//ajudante
+const btnCreateElement = document.getElementById('createElement');
+const btnCreateTextNode = document.getElementById('createTextnode');
+const btnAppend = document.getElementById('append');
+const btnPrepend = document.getElementById('prepend');
+const btnRemove = document.getElementById('remove');
+const btnReplace = document.getElementById('replaceWith');
 
 function getTexto() {
   const texto = inputTexto.value.trim();
   return texto !== '' ? texto : 'Novo Item';
 }
 
-//mt1
 btnCreateElement.addEventListener('click', () => {
     const novoElemento = document.createElement('li');
     novoElemento.textContent = getTexto();
@@ -172,7 +153,6 @@ btnAppend.addEventListener('click', () => {
   inputTexto.value = '';
 });
 
-
 btnPrepend.addEventListener('click', () => {
   const novoElemento = document.createElement('li');
   novoElemento.textContent = getTexto();
@@ -193,10 +173,51 @@ btnReplace.addEventListener('click', () => {
   const itens = list.querySelectorAll('li');
   if (itens.length > 0) {
       const novoElemento = document.createElement('li');
-      novoElemento.textContent = '[Substituído] ${getTexto()}';
+      novoElemento.textContent = `[Substituído] ${getTexto()}`;
       novoElemento.style.borderLeftColor = '#f39c12';   
       itens[0].replaceWith(novoElemento);
   } else {
       alert('Não há itens para substituir!');
   }
 });
+
+function formatarTitulos() {
+  const titulos = document.getElementsByClassName("tituloSection");
+  for (const titulo of titulos) {
+    titulo.setAttribute("style", "font-style: italic;");
+  }
+}
+
+const atributo = document.getElementById("title1").getAttribute("class");
+document.getElementById("classTitleSection").innerHTML = atributo;
+
+const classListAdd = document.getElementById("classTitleSection").classList.add("negrito");
+
+function classListToggle() {
+  document.body.classList.toggle("modoEscuro");
+}
+
+function classListRm() {
+  document.getElementById("classTitleSection").classList.remove("negrito");
+}
+
+function rolarParaBaixo() {
+  window.scrollBy(0, 100);
+  alert(window.scrollX + window.scrollY);
+}
+
+function href() {
+  window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
+
+function reload() {
+  window.location.reload();
+}
+
+function voltar() {
+  window.history.back();
+}
+
+function avancar() {
+  window.history.forward();
+}
