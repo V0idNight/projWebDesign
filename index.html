@@ -43,10 +43,17 @@
     .negrito {
       font-weight: bold;
     }
+
+    div.divSpecial {
+      border: 1px solid white;
+      width: 200px;
+      height: 100px;
+      overflow: scroll;
+    }
   </style>
 </head>
 
-<body>
+<body onload="carregou()">
   <h1>Recursos do JavaScript</h1>
 
   <section>
@@ -56,6 +63,38 @@
     <button onclick="mensagemPrompt()">Aperte aqui para escrever uma mensagem!</button>
     <p id="eco"></p>
     <p id="mensagem"></p>
+    <section>
+      <h2>Evento scroll</h2>
+      <div class="divSpecial" onscroll="contarScroll()">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quaerat, porro ea. Non culpa odit ad quo nam quia, quae eum iste aut libero molestias atque itaque consequatur.
+        Illum, aspernatur molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quaerat debitis
+        numquam eligendi neque, nobis consequuntur tempora repudiandae labore sunt maiores nam saepe? Saepe facilis
+        atque non odio laboriosam natus.</div>
+      <p>Você "scrolou" esse texto <span id="contadorScroll">0</span> vezes.</p>
+    </section>
+    <form onsubmit="submitTeste()">
+      <label for="teste">Insira o que quiser na caixa a baixo.</label><br>
+      <input type="text" name="teste" id="teste" onblur="blurInput()" onfocus="focusInput()">
+      <input type="submit" value="Clique aqui para testar">
+    </form>
+    <p id="resultado"></p>
+    <p id="mensKeyDown"></p>
+    <p>Mexa o slider.</p>
+    <input type="range" oninput="valorSlider(this.value)">
+    <p>Valor: <span id="resultadoSlider"></span></p>
+    <p>Escolha:</p>
+    <select id="selecao" onchange="escolhas()">
+      <option value="Azul">Azul</option>
+      <option value="Vermelho">Vermelho</option>
+      <option value="Amarelo">Amarelo</option>
+    </select>
+    <p id="resultadoSelecao"></p>
+    <section>
+      <h2>Mais eventos de mouse</h2>
+      <p>Mexa o mouse dentro da caixa.</p>
+      <div class="divSpecial" onmousemove="encontrarMouse(event)" onmouseout="limparCords()"></div>
+      <p id="cords"></p>
+    </section>
   </section>
 
   <section>

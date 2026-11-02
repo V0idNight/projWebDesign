@@ -221,3 +221,55 @@ function voltar() {
 function avancar() {
   window.history.forward();
 }
+
+let scrollCount = 0;
+function contarScroll() {
+  document.getElementById("contadorScroll").innerHTML = scrollCount += 1;
+}
+
+function carregou() {
+  alert("A página carregou!")
+}
+
+const inputKeyEvents = document.getElementById("teste");
+const resultadoInput = document.getElementById("resultado");
+inputKeyEvents.addEventListener("keydown", function() {
+  document.getElementById("mensKeyDown").innerHTML = "Você digitou no input!";
+})
+inputKeyEvents.addEventListener("keyup", function() {
+  resultadoInput.textContent = inputKeyEvents.value;
+})
+
+function blurInput() {
+  let x = document.getElementById("teste");
+  x.value = x.value.toUpperCase();
+}
+
+function focusInput() {
+  let x = document.getElementById("teste");
+  x.style.background = "cyan"
+}
+
+function encontrarMouse(e) {
+  let x = e.clientX;
+  let y = e.clientY;
+  let cord = "Cordenadas: (" + x + "," + y + ")";
+  document.getElementById("cords").innerHTML = cord;
+}
+
+function limparCords() {
+  document.getElementById("cords").innerHTML = "";
+}
+
+function valorSlider(value) {
+  document.getElementById("resultadoSlider").innerHTML = value;
+}
+
+function submitTeste() {
+  alert("O que você escreveu foi não enviado para lugar algum.");
+}
+
+function escolhas() {
+  var x = document.getElementById("selecao").value;
+  document.getElementById("resultadoSelecao").innerHTML = "Você selecionou: " + x;
+}
