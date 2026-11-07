@@ -5,139 +5,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recursos do JavaScript</title>
-  <style>
-    body {
-      background-color: #f3f4f6;
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-
-    body.modoEscuro {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 0 16px;
-    }
-
-    #tamanho {
-      white-space: pre-line;
-    }
-
-    button {
-      padding: 6px 12px;
-      margin: 4px 4px 4px 0;
-      cursor: pointer;
-    }
-
-    #input-texto {
-      padding: 6px;
-      margin-bottom: 8px;
-      width: 50%;
-      box-sizing: border-box;
-    }
-
-    .negrito {
-      font-weight: bold;
-    }
-
-    div.divSpecial {
-      border: 1px solid white;
-      width: 200px;
-      height: 100px;
-      overflow: scroll;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="carregou()">
-  <h1>Recursos do JavaScript</h1>
+  <div class="container-fluid">
+    <header class="row">
+      <nav class="navbar navbar-expand-lg bg-success-subtle p-4">
+        <div class="container-fluid">
+          <span class="navbar-brand fw-bold">Recursos de Javascript</span>
+        </div>
+      </nav>
+    </header>
 
-  <section>
-    <h2 class="tituloSection">Eventos HTML</h2>
-    <button id="funcClick">Clique aqui (onclick)</button>
-    <p id="mouseOverOut">Passe o mouse aqui.</p>
-    <button onclick="mensagemPrompt()">Aperte aqui para escrever uma mensagem!</button>
-    <p id="eco"></p>
-    <p id="mensagem"></p>
-    <section>
-      <h2>Evento scroll</h2>
-      <div class="divSpecial" onscroll="contarScroll()">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Quaerat, porro ea. Non culpa odit ad quo nam quia, quae eum iste aut libero molestias atque itaque consequatur.
-        Illum, aspernatur molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quaerat debitis
-        numquam eligendi neque, nobis consequuntur tempora repudiandae labore sunt maiores nam saepe? Saepe facilis
-        atque non odio laboriosam natus.</div>
-      <p>Você "scrolou" esse texto <span id="contadorScroll">0</span> vezes.</p>
-    </section>
-    <form onsubmit="submitTeste()">
-      <label for="teste">Insira o que quiser na caixa a baixo.</label><br>
-      <input type="text" name="teste" id="teste" onblur="blurInput()" onfocus="focusInput()">
-      <input type="submit" value="Clique aqui para testar">
-    </form>
-    <p id="resultado"></p>
-    <p id="mensKeyDown"></p>
-    <p>Mexa o slider.</p>
-    <input type="range" oninput="valorSlider(this.value)">
-    <p>Valor: <span id="resultadoSlider"></span></p>
-    <p>Escolha:</p>
-    <select id="selecao" onchange="escolhas()">
-      <option value="Azul">Azul</option>
-      <option value="Vermelho">Vermelho</option>
-      <option value="Amarelo">Amarelo</option>
-    </select>
-    <p id="resultadoSelecao"></p>
-    <section>
-      <h2>Mais eventos de mouse</h2>
-      <p>Mexa o mouse dentro da caixa.</p>
-      <div class="divSpecial" onmousemove="encontrarMouse(event)" onmouseout="limparCords()"></div>
-      <p id="cords"></p>
-    </section>
-  </section>
+    <div class="container">
+      <section class="row">
+        <h2 class="tituloSection">Eventos HTML</h2>
+        <section class="col-6">
+          <button id="funcClick">Clique aqui (onclick)</button>
+          <p id="mouseOverOut">Passe o mouse aqui.</p>
+          <button onclick="mensagemPrompt()">Aperte aqui para escrever uma mensagem!</button>
+          <p id="eco"></p>
+          <p id="mensagem"></p>
+        </section>
+        <section class="col-6">
+          <h2>Evento scroll</h2>
+          <div class="divSpecial" onscroll="contarScroll()">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quaerat, porro ea. Non culpa odit ad quo nam quia, quae eum iste aut libero molestias atque itaque
+            consequatur.
+            Illum, aspernatur molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quaerat debitis
+            numquam eligendi neque, nobis consequuntur tempora repudiandae labore sunt maiores nam saepe? Saepe facilis
+            atque non odio laboriosam natus.</div>
+          <p>Você "scrolou" esse texto <span id="contadorScroll">0</span> vezes.</p>
+        </section>
+        <section class="col-6">
+          <form onsubmit="submitTeste()">
+            <label for="teste">Insira o que quiser na caixa a baixo.</label><br>
+            <input type="text" name="teste" id="teste" onblur="blurInput()" onfocus="focusInput()">
+            <input type="submit" value="Clique aqui para testar">
+          </form>
+          <p id="resultado"></p>
+          <p id="mensKeyDown"></p>
+          <p>Mexa o slider.</p>
+          <input type="range" oninput="valorSlider(this.value)">
+          <p>Valor: <span id="resultadoSlider"></span></p>
+          <p>Escolha:</p>
+          <select id="selecao" onchange="escolhas()">
+            <option value="Azul">Azul</option>
+            <option value="Vermelho">Vermelho</option>
+            <option value="Amarelo">Amarelo</option>
+          </select>
+          <p id="resultadoSelecao"></p>
+        </section>
+        <section class="col-6">
+          <h2>Mais eventos de mouse</h2>
+          <p>Mexa o mouse dentro da caixa.</p>
+          <div class="divSpecial" onmousemove="encontrarMouse(event)" onmouseout="limparCords()"></div>
+          <p id="cords"></p>
+        </section>
+      </section>
 
-  <section>
-    <h2 id="title1" class="tituloSection">Manipulação de DOM</h2>
-    <input type="text" id="input-texto" placeholder="digite o texto do novo elemento"><br>
-    <button id="createElement">createElement()</button> <!-- Faz uso de appendChild -->
-    <button id="createTextnode">createTextNode()</button> <!-- Faz uso de appendChild -->
-    <button id="append">append()</button><br>
-    <button id="prepend">prepend()</button>
-    <button id="remove">remove()</button>
-    <button id="replaceWith">replaceWith()</button>
-    <h3>Lista de Elementos:</h3>
-    <ul id="minha-lista">
-      <li>Item Original</li>
-    </ul>
-    <button onclick="trocarTitulo()">Trocar título da página</button>
-    <button onclick="formatarTitulos()">Trocar títulos dos cards</button>
-    <p>A seguinte classe está sendo utilizada nos titulos:</p>
-    <p id="classTitleSection"></p>
-    <button onclick="classListRm()">Remover formatação</button>
-  </section>
+      <section class="row">
+        <h2 id="title1" class="tituloSection">Manipulação de DOM</h2>
+        <section class="col-6">
+          <input type="text" id="input-texto" placeholder="digite o texto do novo elemento"><br>
+          <button id="createElement">createElement()</button> <!-- Faz uso de appendChild -->
+          <button id="createTextnode">createTextNode()</button> <!-- Faz uso de appendChild -->
+          <button id="append">append()</button><br>
+          <button id="prepend">prepend()</button>
+          <button id="remove">remove()</button>
+          <button id="replaceWith">replaceWith()</button>
+          <h3>Lista de Elementos:</h3>
+          <ul id="minha-lista">
+            <li>Item Original</li>
+          </ul>
+        </section>
+        <section class="col-6">
+          <button onclick="trocarTitulo()">Trocar título da página</button>
+          <button onclick="formatarTitulos()">Trocar títulos dos cards</button>
+          <p>A seguinte classe está sendo utilizada nos titulos:</p>
+          <p id="classTitleSection"></p>
+          <button onclick="classListRm()">Remover formatação</button>
+        </section>
+      </section>
 
-  <section>
-    <h2 class="tituloSection">Manipulação de Janela</h2>
-    <p id="tamanho"></p>
-    <button onclick="abrirJanela()">Abrir nova janela</button>
-    <button onclick="fecharJanela()">Fechar nova janela</button>
-    <button onclick="confirmarSaida()">Confirmar</button>
-    <button onclick="voltarAoTopo()">Rolar para o topo</button>
-    <button onclick="rolarParaBaixo()">Rolar um pouco para baixo</button>
-    <button onclick="classListToggle()">Alternar Tema</button>
-    <button onclick="voltar()">Voltar página</button>
-    <button onclick="avancar()">Avançar página</button>
-    <button onclick="href()">Mudar página</button>
-    <button onclick="reload()">Recarregar Página</button>
-    <p id="tempo">Aguardando...</p>
-    <button onclick="IniciarTimeout()">Executar timeout.</button>
-    <button id="CancelarTimeout" onclick="cancelarTimeout()">Cancelar Timeout</button>
-    <p id="intervalo">Contador: 0</p>
-    <button id="IniciarIntervalo" onclick="iniciarIntervalo()">Iniciar Contador</button>
-    <button id="PararIntervalo" onclick="pararIntervalo()">Parar Contador</button>
-  </section>
-  <script src="script.js"></script>
+      <section class="row">
+        <h2 class="tituloSection">Manipulação de Janela</h2>
+        <section class="col-6">
+          <p id="tamanho"></p>
+          <button onclick="abrirJanela()">Abrir nova janela</button>
+          <button onclick="fecharJanela()">Fechar nova janela</button>
+          <button onclick="confirmarSaida()">Confirmar</button>
+          <button onclick="voltarAoTopo()">Rolar para o topo</button>
+          <button onclick="rolarParaBaixo()">Rolar um pouco para baixo</button>
+          <button onclick="classListToggle()">Alternar Tema</button>
+          <button onclick="voltar()">Voltar página</button>
+          <button onclick="avancar()">Avançar página</button>
+          <button onclick="href()">Mudar página</button>
+          <button onclick="reload()">Recarregar Página</button>
+        </section>
+
+        <div class="col-6">
+          <div class="row">
+            <section class="col-12">
+              <p id="tempo">Aguardando...</p>
+              <button onclick="IniciarTimeout()">Executar timeout.</button>
+              <button id="CancelarTimeout" onclick="cancelarTimeout()">Cancelar Timeout</button>
+            </section>
+            <section class="col-12">
+              <p id="intervalo">Contador: 0</p>
+              <button id="IniciarIntervalo" onclick="iniciarIntervalo()">Iniciar Contador</button>
+              <button id="PararIntervalo" onclick="pararIntervalo()">Parar Contador</button>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
