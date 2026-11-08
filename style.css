@@ -41,3 +41,15 @@ div.divSpecial {
 header {
     margin-bottom: 30px;
 }
+
+.cabecalho {
+    padding: 1.5rem;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+}
+
+.navbar {
+    border-bottom: red 2px solid;
+}

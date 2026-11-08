@@ -28,7 +28,7 @@ for (let i = 0; i < section.length; i++) {
   section[i].style.color = "white";
   section[i].style.border = "3px solid red";
   section[i].style.padding = "12px 16px";
-  section[i].style.marginBottom = "16px";
+  section[i].style.margin = "8px 8px";
 }
 
 let contador = 0;
@@ -247,7 +247,7 @@ function blurInput() {
 
 function focusInput() {
   let x = document.getElementById("teste");
-  x.style.background = "cyan"
+  x.style.background = "blue"
 }
 
 function encontrarMouse(e) {
@@ -266,7 +266,7 @@ function valorSlider(value) {
 }
 
 function submitTeste() {
-  alert("O que você escreveu foi não enviado para lugar algum.");
+  alert("O que você escreveu não foi enviado para lugar algum.");
 }
 
 function escolhas() {

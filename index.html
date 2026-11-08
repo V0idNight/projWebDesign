@@ -13,7 +13,7 @@
 <body onload="carregou()">
   <div class="container-fluid">
     <header class="row">
-      <nav class="navbar navbar-expand-lg bg-success-subtle p-4">
+      <nav class="navbar navbar-expand-lg bg-dark p-4 cabecalho">
         <div class="container-fluid">
           <span class="navbar-brand fw-bold">Recursos de Javascript</span>
         </div>
@@ -24,14 +24,15 @@
       <section class="row">
         <h2 class="tituloSection">Eventos HTML</h2>
         <section class="col-6">
+          <h3 class="fw-bold">Eventos de clique e mouse</h3>
           <button id="funcClick">Clique aqui (onclick)</button>
           <p id="mouseOverOut">Passe o mouse aqui.</p>
           <button onclick="mensagemPrompt()">Aperte aqui para escrever uma mensagem!</button>
           <p id="eco"></p>
           <p id="mensagem"></p>
         </section>
-        <section class="col-6">
-          <h2>Evento scroll</h2>
+        <section class="col-5">
+          <h3 class="fw-bold">Eventos relacionados ao scroll</h3>
           <div class="divSpecial" onscroll="contarScroll()">Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Quaerat, porro ea. Non culpa odit ad quo nam quia, quae eum iste aut libero molestias atque itaque
             consequatur.
@@ -41,6 +42,7 @@
           <p>Você "scrolou" esse texto <span id="contadorScroll">0</span> vezes.</p>
         </section>
         <section class="col-6">
+          <h3 class="fw-bold">Eventos relacionados a formulários</h3>
           <form onsubmit="submitTeste()">
             <label for="teste">Insira o que quiser na caixa a baixo.</label><br>
             <input type="text" name="teste" id="teste" onblur="blurInput()" onfocus="focusInput()">
@@ -59,8 +61,8 @@
           </select>
           <p id="resultadoSelecao"></p>
         </section>
-        <section class="col-6">
-          <h2>Mais eventos de mouse</h2>
+        <section class="col-5">
+          <h3 class="fw-bold">Mais eventos de mouse</h3>
           <p>Mexa o mouse dentro da caixa.</p>
           <div class="divSpecial" onmousemove="encontrarMouse(event)" onmouseout="limparCords()"></div>
           <p id="cords"></p>
@@ -82,7 +84,7 @@
             <li>Item Original</li>
           </ul>
         </section>
-        <section class="col-6">
+        <section class="col-5">
           <button onclick="trocarTitulo()">Trocar título da página</button>
           <button onclick="formatarTitulos()">Trocar títulos dos cards</button>
           <p>A seguinte classe está sendo utilizada nos titulos:</p>
@@ -107,8 +109,9 @@
           <button onclick="reload()">Recarregar Página</button>
         </section>
 
-        <div class="col-6">
+        <div class="col-5">
           <div class="row">
+            <h3 class="fw-bold">Temporizadores</h3>
             <section class="col-12">
               <p id="tempo">Aguardando...</p>
               <button onclick="IniciarTimeout()">Executar timeout.</button>
