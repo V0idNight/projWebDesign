@@ -34,7 +34,7 @@ for (let i = 0; i < section.length; i++) {
 let contador = 0;
 
 function trocarTitulo() {
-  document.querySelector("h1").innerText = "Recursos do Javacript (Alterado)";
+  document.getElementsByClassName("navbar-brand").innerText = "Recursos do Javacript (Alterado)";
   document.title = "Recursos do Javacript (Alterado)";
 }
 
